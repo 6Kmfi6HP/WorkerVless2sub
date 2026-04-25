@@ -1,0 +1,38 @@
+name = "worker-vless2sub"
+main = "_worker.js"
+compatibility_date = "2023-12-01"
+# Custom Domain
+routes = [
+    { pattern = "cf-workers-vless2sub.rtt.icu", custom_domain = true }
+]
+# 开发环境配置
+[dev]
+port = 8787
+local_protocol = "http"
+
+# 环境变量配置
+[vars]
+# 快速订阅访问入口
+TOKEN = "auto"
+
+# VLESS 节点配置
+# HOST = "edgetunnel-2z2.pages.dev"
+# UUID = "b7a392e2-4ef0-4496-90bc-1c37bb234904"
+# PATH = "/?ed=2560"
+
+# 动态 UUID 配置
+KEY = "token"
+TIME = "7"
+UPTIME = "3"
+
+# 优选线路配置
+ADD = "icook.tw:2053#优选域名,cloudflare.cfgo.cc#优选官方线路"
+ADDAPI = "https://raw.githubusercontent.com/6Kmfi6HP/cloudflare-ips/refs/heads/main/1.txt"
+
+# 性能配置
+DLS = "7"
+ALPN = "http/1.1"
+
+# 触发器配置
+[triggers]
+crons = ["0 3 * * *"] # 每天凌晨3点更新
